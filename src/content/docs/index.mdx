@@ -1,0 +1,37 @@
+---
+title: Welcome
+description: Personal blog of Brendan Kowitz - Software Developer at Microsoft, FHIR enthusiast, and AI-assisted coding explorer.
+template: splash
+hero:
+  tagline: Software Developer at Microsoft by day, vibecoding with AI by night. 7+ years connecting health data with FHIR.
+  image:
+    alt: Brendan Kowitz - Software Developer
+    file: ../../assets/hero-image.svg
+  actions:
+    - text: Read the Blog
+      link: /blog/welcome
+      icon: right-arrow
+      variant: primary
+    - text: About Me
+      link: /about
+      icon: seti:info
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What I Write About
+
+<CardGrid stagger>
+  <Card title="Health Data & FHIR" icon="heart">
+    Insights from 7+ years of working with FHIR (Fast Healthcare Interoperability Resources) and connecting health data systems.
+  </Card>
+  <Card title="AI-Assisted Development" icon="rocket">
+    Exploring the frontier of vibecoding - using AI tools to enhance software development and create new possibilities.
+  </Card>
+  <Card title="Software Engineering" icon="laptop">
+    Best practices, architecture patterns, and lessons learned from building enterprise software at Microsoft.
+  </Card>
+  <Card title="Open Source" icon="github">
+    Contributing to and learning from the open source community.
+  </Card>
+</CardGrid>

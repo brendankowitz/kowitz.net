@@ -55,6 +55,14 @@ General insights from building software at scale:
 - Code quality and maintainability
 - Working effectively in teams
 
+### Management & Leadership
+
+Thoughts on the people side of technology:
+
+- Growing and mentoring engineers
+- Building effective teams
+- Navigating the transition from IC to leadership
+
 ## Built with Modern Tools
 
 This site itself is an example of what I want to explore. It's built with:

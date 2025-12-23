@@ -27,6 +27,15 @@ By day, I'm focused on enterprise software development, working with talented te
 - Security best practices
 - Team collaboration and code quality
 
+### Management & Team Leadership
+
+Beyond coding, I'm passionate about the people side of technology. Building great software requires building great teams, and I've learned valuable lessons about:
+
+- **Growing engineers** - Helping team members develop their skills and advance their careers
+- **Technical leadership** - Balancing hands-on work with guiding others
+- **Team dynamics** - Creating environments where people do their best work
+- **Decision making** - Navigating trade-offs and making calls with incomplete information
+
 ## Vibecoding & AI
 
 By night, I'm exploring the exciting frontier of **AI-assisted development** - what I like to call "vibecoding." This isn't just about using AI tools; it's about fundamentally rethinking how we approach software creation.

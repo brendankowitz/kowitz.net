@@ -8,6 +8,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Brendan Kowitz',
+      components: {
+        Head: './src/components/Head.astro',
+      },
       description: 'Personal blog and thoughts on software development, health data, FHIR, and AI-assisted coding.',
       logo: {
         light: './src/assets/logo-light.svg',

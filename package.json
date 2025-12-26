@@ -1,0 +1,30 @@
+{
+  "name": "kowitz.net",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": [
+    "blog",
+    "personal",
+    "astro",
+    "starlight"
+  ],
+  "author": "Brendan Kowitz",
+  "license": "BSD-3-Clause",
+  "description": "Personal blog and website for Brendan Kowitz",
+  "dependencies": {
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/starlight": "^0.37.1",
+    "astro": "^5.16.6",
+    "mdast-util-to-string": "^4.0.0",
+    "reading-time": "^1.5.0",
+    "remark-reading-time": "^2.0.2",
+    "sharp": "^0.34.5"
+  }
+}

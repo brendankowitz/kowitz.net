@@ -1,0 +1,153 @@
+/* Custom styles for kowitz.net */
+
+/* Modern 2025/2026 design aesthetic */
+:root {
+  /* Custom color palette - clean and professional */
+  --sl-color-accent-low: #e0f2fe;
+  --sl-color-accent: #0284c7;
+  --sl-color-accent-high: #075985;
+  
+  /* Typography adjustments */
+  --sl-font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --sl-font-mono: 'Cascadia Code', 'Fira Code', Consolas, 'Liberation Mono', monospace;
+  
+  /* Spacing */
+  --sl-content-width: 45rem;
+}
+
+/* Dark mode color adjustments */
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #0c4a6e;
+  --sl-color-accent: #38bdf8;
+  --sl-color-accent-high: #bae6fd;
+}
+
+/* Hero section customization for splash page */
+.hero {
+  padding-block: 3rem;
+}
+
+.hero .tagline {
+  font-size: var(--sl-text-xl);
+  line-height: 1.6;
+  max-width: 45ch;
+}
+
+/* Hero image sizing - floating style without boxy container */
+.hero img.hero-avatar {
+  max-width: 280px;
+  height: auto;
+}
+
+/* Card grid improvements */
+.sl-card-grid {
+  gap: 1.5rem;
+}
+
+.sl-card {
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Reading time badge */
+.reading-time {
+  display: inline-block;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+  margin-bottom: 0.5rem;
+}
+
+/* Blog post styling */
+article {
+  line-height: 1.75;
+}
+
+article h1 {
+  font-size: var(--sl-text-4xl);
+  letter-spacing: -0.02em;
+}
+
+article h2 {
+  font-size: var(--sl-text-2xl);
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--sl-color-gray-5);
+}
+
+article h3 {
+  font-size: var(--sl-text-xl);
+  margin-top: 2rem;
+}
+
+/* Code block improvements */
+pre {
+  border-radius: 0.5rem;
+  font-size: 0.9em;
+}
+
+code {
+  font-family: var(--sl-font-mono);
+  font-size: 0.9em;
+}
+
+/* Link styling */
+article a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+article a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 50rem) {
+  .hero .tagline {
+    font-size: var(--sl-text-lg);
+  }
+  
+  article h1 {
+    font-size: var(--sl-text-3xl);
+  }
+}
+
+/* Footer attribution */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .sidebar,
+  .right-sidebar,
+  header {
+    display: none;
+  }
+  
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+}

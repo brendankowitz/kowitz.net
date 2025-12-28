@@ -112,9 +112,16 @@ article a:hover {
   .hero .tagline {
     font-size: var(--sl-text-lg);
   }
-  
+
   article h1 {
     font-size: var(--sl-text-3xl);
+  }
+}
+
+/* Mobile header - hide title text on small screens, keep logo */
+@media (max-width: 24rem) {
+  .site-title span:not(.sr-only) {
+    display: none;
   }
 }
 

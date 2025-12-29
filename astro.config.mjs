@@ -26,7 +26,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'About',
-          slug: 'about',
+          link: '/about/',
         },
         {
           label: 'Blog',

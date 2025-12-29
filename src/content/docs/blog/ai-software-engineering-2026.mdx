@@ -1,0 +1,100 @@
+---
+title: AI in Software Engineering - What 2026 Looks Like
+description: Reflections on how AI has transformed software development and what lies ahead for engineering teams in 2026.
+date: 2025-12-27
+tags: [ai, software-engineering, predictions]
+---
+
+import Comments from '../../../components/Comments.astro';
+
+<p class="reading-time">6 min read</p>
+
+We're at an inflection point. The AI tools we experimented with in 2023 and refined through 2024-2025 are now fundamentally reshaping how we build software. As we look toward 2026, I wanted to share some observations on where we are and where I think we're headed.
+
+## It's Not About One-Shotting Problems
+
+There's a misconception that AI coding tools are meant to be another "silver bullet" that one-shots every problem. That's not it at all.
+
+What we're actually doing is **creating the tools, workflows, and processes that define a new era for software development**. The [Cursor CEO's recent comments](https://fortune.com/2025/12/25/cursor-ceo-michael-truell-vibe-coding-warning-generative-ai-assistant/) about "vibe coding" touch on this—it's not about blindly accepting AI output. It's about a fundamental shift in how humans and AI collaborate on complex problems.
+
+I believe AI will increase the efficiency of every developer 10x or more. Those who aren't already using AI to accelerate development will be left behind in 2026. The tools aren't perfect, but they're taking off.
+
+## The Shift from Completion to Collaboration
+
+The early days of AI-assisted coding felt like autocomplete on steroids. GitHub Copilot suggested the next line, and we accepted or rejected. That model is already feeling dated.
+
+What's emerging is true collaboration. Tools like [Claude Code](https://simonwillison.net/2025/Dec/25/claude-code-transcripts/), Cursor, and the next generation of AI assistants don't just complete your code—they understand your *intent*. They ask clarifying questions. They push back on architectural decisions. They remember context across sessions. Some are even exploring AI as an [accountability buddy](https://dev.to/yooi/beyond-coding-your-accountability-buddy-with-claude-code-skill-4omh) rather than just a code generator.
+
+This shift from "AI as typeahead" to "AI as pair programmer" is the most significant change in how we write software since the move to version control.
+
+## Where Early 2026 Is Heading
+
+In the first part of 2026, I expect we'll see the natural evolution toward:
+
+**Spec-first development** — GitHub's recent [spec-driven development toolkit](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) is a sign of things to come. Rather than jumping straight to code, we'll see more structured approaches where specifications drive AI-generated implementations.
+
+**"15-minute waterfall"** — Rapid cycles of spec → implement → review → iterate. The traditional tension between "move fast" and "think first" dissolves when the implementation step takes minutes instead of hours. You can afford to be more deliberate about what you're building because building it is cheap.
+
+**Rapid prototyping as the default** — That idea you've been sitting on? Build a working proof-of-concept in an afternoon instead of a weekend. Validate concepts before committing serious time. This brings new meaning to "iterate fast, fail fast"—someone seeing the implementation and iterating quickly gets you where you need to be, or quickly decides it's a dead end at the cost of a couple hours and a bunch of tokens.
+
+**New interaction paradigms** — Projects like [AG-UI Composer](https://a2ui-composer.ag-ui.com) and tools like [vibe-thought-collector](https://github.com/dneimke/vibe-thought-collector) are exploring how we capture and organize thoughts for AI consumption. The interface between human intent and AI execution is still being invented.
+
+## Build vs. Buy Is Dead
+
+VentureBeat recently declared that [build vs. buy is dead](https://venturebeat.com/ai/build-vs-buy-is-dead-ai-just-killed-it/)—AI killed it. When you can spin up a custom solution in hours, the calculus changes completely. The question isn't "should we build this or buy it?" anymore. It's "what's the fastest path to validating whether this solves our problem?"
+
+This has massive implications for how we evaluate software decisions, vendor relationships, and technical debt.
+
+## What About Local AI?
+
+A year ago, I was convinced we'd see SLMs (small language models) built into dev environments that would train and customize on your own codebase. The privacy and latency benefits seemed compelling.
+
+But the progress of frontier models has been smashing limits all of 2025. Projects like [Z.ai's open-source coding assistant](https://www.perplexity.ai/page/z-ai-releases-open-source-codi-RkOnqOSRR2SeEQYU1gX6oQ) are interesting, and local AI will have its place—especially for sensitive codebases or offline work. But for now, the capability gap between frontier and local models remains significant.
+
+I expect 2026 will see continued experimentation here, with local models finding niches rather than replacing cloud-based assistants entirely.
+
+## What's Actually Working Today
+
+After a year of heavy AI integration in my workflow, here's what genuinely delivers:
+
+**Code exploration and understanding** — AI excels at explaining unfamiliar codebases, tracing execution paths, and answering "why was this built this way?" questions. For anyone joining a new team or diving into legacy systems, this alone is transformative.
+
+**Boilerplate and scaffolding** — Setting up projects, writing tests, creating CRUD operations, handling error cases. The repetitive work that used to drain hours is now minutes. The key is being specific about *your* patterns and conventions.
+
+**Documentation and explanation** — Generating clear docs from code, explaining complex logic for PRs, translating technical concepts for stakeholders. AI handles this better than most humans are willing to.
+
+**Refactoring with confidence** — Asking an AI to modernize a codebase while preserving behavior, then reviewing the changes. It's not perfect, but it's a powerful starting point.
+
+## What Still Requires Human Judgment
+
+AI isn't replacing software engineers—it's amplifying them. But the amplification only works if you know what to amplify:
+
+**Architecture decisions** — AI can suggest patterns, but deciding which tradeoffs matter for *your* system, *your* team, and *your* timeline requires human context it doesn't have.
+
+**Security thinking** — AI will happily write insecure code if you don't prompt it otherwise. The adversarial mindset, threat modeling, and "what could go wrong here?" thinking remains firmly human territory.
+
+**Domain expertise** — In healthcare interoperability, for example, knowing that a particular FHIR profile has quirks, or that a regulation is about to change, or that a vendor has a reputation for breaking changes—this institutional knowledge is irreplaceable.
+
+**Team dynamics and code ownership** — Knowing when to refactor vs. when to leave something alone because the team that owns it has context you don't. AI can't navigate organizational complexity.
+
+## The Meta Skill
+
+The engineers who thrive in this environment share a common trait: they're excellent at articulating intent. They can describe what they want, specify constraints clearly, and recognize when output doesn't match expectations.
+
+This isn't prompt engineering tricks—it's clear thinking. The ability to decompose problems, specify behavior precisely, and communicate technical decisions clearly has always been valuable. AI just makes it essential.
+
+As [Addy Osmani's LLM coding workflow](https://addyo.substack.com/p/my-llm-coding-workflow-going-into) illustrates, the developers getting the most out of AI tools have developed deliberate processes for how they interact with them.
+
+---
+
+The tools will keep evolving. What won't change is the need for engineers who understand systems deeply, think critically about tradeoffs, and can translate between human needs and technical implementation. AI handles more of the typing. We need to be better at the thinking.
+
+Before we see fundamental and mature directions emerge, 2026 will be a year of experimentation—finding what works, discarding what doesn't, and building the workflows that will define how we develop software for the next decade.
+
+*What's your experience been? I'd love to hear how AI has changed your workflow—or where it's fallen short.*
+
+---
+
+## Comments
+
+<Comments />

@@ -9,89 +9,85 @@ import Comments from '../../../components/Comments.astro';
 
 <p class="reading-time">6 min read</p>
 
-We're at an inflection point. The AI tools we experimented with in 2023 and refined through 2024-2025 are now fundamentally reshaping how we build software. As we look toward 2026, I wanted to share some observations on where we are and where I think we're headed.
+As we end 2025, a lot of us have spent a good amount of time coding with AI assistance as it's been evolving in what seems like mid-flight. The features we use one week seem to have completely evolved out from under us the next. I think it's safe to say the "autocomplete" phase is officially over, and has probably been over for some time. The tools we experimented with in 2024 and refined through 2025 are now fundamentally reshaping how we build software. As we look toward 2026, I wanted to share some observations on where we are and where I think we're headed.
 
 ## It's Not About One-Shotting Problems
 
-There's a misconception that AI coding tools are meant to be another "silver bullet" that one-shots every problem. That's not it at all.
+AI isn't a silver bullet that one-shots every problem. Honestly, even comparing "how good" an AI tool is by how much it can "one-shot" isn't a good measure of depth and totality.
 
-What we're actually doing is **creating the tools, workflows, and processes that define a new era for software development**. The [Cursor CEO's recent comments](https://fortune.com/2025/12/25/cursor-ceo-michael-truell-vibe-coding-warning-generative-ai-assistant/) about "vibe coding" touch on this—it's not about blindly accepting AI output. It's about a fundamental shift in how humans and AI collaborate on complex problems.
+We are still **creating the tools, workflows, and processes that define a new era for software development**. The [Cursor CEO's recent comments](https://fortune.com/2025/12/25/cursor-ceo-michael-truell-vibe-coding-warning-generative-ai-assistant/) about "vibe coding" touch on this: it's not about blindly accepting AI output. It's about a fundamental shift in how humans and AI collaborate on complex problems.
 
 I believe AI will increase the efficiency of every developer 10x or more. Those who aren't already using AI to accelerate development will be left behind in 2026. The tools aren't perfect, but they're taking off.
 
 ## The Shift from Completion to Collaboration
 
-The early days of AI-assisted coding felt like autocomplete on steroids. GitHub Copilot suggested the next line, and we accepted or rejected. That model is already feeling dated.
+The early days of AI-assisted coding felt like autocomplete on steroids... or maybe autocomplete on LSD or some other hallucinogen, definitely filled with wild, powerful potential. Though it wasn't long before they got to the point where I preferred the Copilot intellisense in VSCode over installing all the language packs; it was already "good enough" and loaded faster.
 
-What's emerging is true collaboration. Tools like [Claude Code](https://simonwillison.net/2025/Dec/25/claude-code-transcripts/), Cursor, and the next generation of AI assistants don't just complete your code—they understand your *intent*. They ask clarifying questions. They push back on architectural decisions. They remember context across sessions. Some are even exploring AI as an [accountability buddy](https://dev.to/yooi/beyond-coding-your-accountability-buddy-with-claude-code-skill-4omh) rather than just a code generator.
-
-This shift from "AI as typeahead" to "AI as pair programmer" is the most significant change in how we write software since the move to version control.
+What's emerging is true collaboration. Tools like [Claude Code](https://claude.com/product/claude-code) and the next generation of AI agents don't just complete your code; they try to break down the requirements. This shift from "AI as typeahead" to "AI as pair programmer" feels like where we're "at" right now, but it's most definitely still a stepping stone.
 
 ## Where Early 2026 Is Heading
 
 In the first part of 2026, I expect we'll see the natural evolution toward:
 
-**Spec-first development** — GitHub's recent [spec-driven development toolkit](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) is a sign of things to come. Rather than jumping straight to code, we'll see more structured approaches where specifications drive AI-generated implementations.
+**Spec-first development / "15-minute waterfall"** - GitHub's recent [spec-driven development toolkit](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) is a sign of things to come. Rather than jumping straight to code, we'll see more structured approaches where specifications drive AI-generated implementations.
 
-**"15-minute waterfall"** — Rapid cycles of spec → implement → review → iterate. The traditional tension between "move fast" and "think first" dissolves when the implementation step takes minutes instead of hours. You can afford to be more deliberate about what you're building because building it is cheap.
+**Rapid prototyping as the default:** That idea you've been sitting on? Build a working proof-of-concept in an afternoon instead of days (or weeks). Validate concepts before committing serious time. This brings new meaning to "iterate fast, fail fast": seeing the implementation and iterating quickly gets you where you need to be, or helps you realize it's a dead end at the cost of a couple of hours and a few thousand tokens.
 
-**Rapid prototyping as the default** — That idea you've been sitting on? Build a working proof-of-concept in an afternoon instead of a weekend. Validate concepts before committing serious time. This brings new meaning to "iterate fast, fail fast"—someone seeing the implementation and iterating quickly gets you where you need to be, or quickly decides it's a dead end at the cost of a couple hours and a bunch of tokens.
+**New interaction paradigms** - Projects like [AG-UI Composer](https://a2ui-composer.ag-ui.com) are exploring how we capture, organize, and collaborate on information. The interface between human intent and AI execution is still being invented. It only makes sense that while the CLI has been an extremely productive interface for coding (and developers), it might not be the best interaction for every type of problem; having the ability to create on-demand interfaces seems natural.
 
-**New interaction paradigms** — Projects like [AG-UI Composer](https://a2ui-composer.ag-ui.com) and tools like [vibe-thought-collector](https://github.com/dneimke/vibe-thought-collector) are exploring how we capture and organize thoughts for AI consumption. The interface between human intent and AI execution is still being invented.
+**Agentic memory / ecosystem enhancements** - Every time I see the words `compacting context`, it's like a mini-stroke or an amnesia moment for the agent. It will remember some high-level things, but all the depth is forgotten. It seems like there is a ton of [ideas](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and [research](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) in this area. There are also some pragmatic solutions like [extracting the agent transcripts](https://simonwillison.net/2025/Dec/25/claude-code-transcripts/) (which I really like the idea of) and creating a vectorized search on top of them. The [Agent-flywheel](https://agent-flywheel.com) project has set up a full ecosystem around this where agents can essentially learn from, search, and even send messages to each other. The models are also expanding in this area, too, with several like Gemini and Claude Sonnet starting to offer 1M token context windows. 
 
-## Build vs. Buy Is Dead
-
-VentureBeat recently declared that [build vs. buy is dead](https://venturebeat.com/ai/build-vs-buy-is-dead-ai-just-killed-it/)—AI killed it. When you can spin up a custom solution in hours, the calculus changes completely. The question isn't "should we build this or buy it?" anymore. It's "what's the fastest path to validating whether this solves our problem?"
-
-This has massive implications for how we evaluate software decisions, vendor relationships, and technical debt.
+**Sub-agents** - Maybe you can argue with me on the sub-agent vs. multi-agentic setup, but I think of this more as having an orchestration agent (the main context) who you feed the high-level task to. The main agent will spawn planning agents, exploration agents, and finally coding agents to get the job done. Why? Well, the longer we have our main context alive (with fewer compactions), the easier and more consistent things are. For example, spawning multiple sub-agents to do a smaller refactoring can spend thousands of tokens; it understood the task, it read all the files, made all the edits, and there was no need to pollute the main context with all those details. Same with research/exploration sub-agents: if they search and get sidetracked or get bad context, they didn't pollute the entire session. The main agent still has an opportunity to redefine what it wanted. I initially thought of "multi-agentic setups" as peer agents handing off between each other ([like in VSCode](https://code.visualstudio.com/docs/copilot/customization/custom-agents#_handoffs)), which seems cool, but I just haven't seen it be as effective as the sub-agent model.
 
 ## What About Local AI?
 
-A year ago, I was convinced we'd see SLMs (small language models) built into dev environments that would train and customize on your own codebase. The privacy and latency benefits seemed compelling.
+A year ago, I was convinced we'd see SLMs (small language models) built into dev environments that would fine-tune and customize on your own codebase. The privacy and latency benefits seemed compelling.
 
-But the progress of frontier models has been smashing limits all of 2025. Projects like [Z.ai's open-source coding assistant](https://www.perplexity.ai/page/z-ai-releases-open-source-codi-RkOnqOSRR2SeEQYU1gX6oQ) are interesting, and local AI will have its place—especially for sensitive codebases or offline work. But for now, the capability gap between frontier and local models remains significant.
+But the progress of frontier models has been smashing limits all of 2025. Projects like [Z.ai's open-source coding assistant](https://www.perplexity.ai/page/z-ai-releases-open-source-codi-RkOnqOSRR2SeEQYU1gX6oQ) are interesting, and local AI will have its place, especially for sensitive codebases or offline work. But for now, the capability gap between frontier and local models remains significant.
 
 I expect 2026 will see continued experimentation here, with local models finding niches rather than replacing cloud-based assistants entirely.
 
-## What's Actually Working Today
+## What's Working
 
-After a year of heavy AI integration in my workflow, here's what genuinely delivers:
+After a year of heavy AI integration in my workflow, here is the stuff that actually delivers value (vs. the hype that just wastes tokens):
 
-**Code exploration and understanding** — AI excels at explaining unfamiliar codebases, tracing execution paths, and answering "why was this built this way?" questions. For anyone joining a new team or diving into legacy systems, this alone is transformative.
+**Code exploration is the killer app.** AI excels at explaining unfamiliar codebases, tracing execution paths, and answering "why was this built this way?" questions. For anyone joining a new team or diving into legacy systems, this alone is transformative. Most of the coding agents include an `/init` type of command that goes off and creates an agent file that is better and more up-to-date than a lot of the docs you'll scrape up on an intranet.
 
-**Boilerplate and scaffolding** — Setting up projects, writing tests, creating CRUD operations, handling error cases. The repetitive work that used to drain hours is now minutes. The key is being specific about *your* patterns and conventions.
+**Boilerplate is gone.** Setting up projects, writing tests, creating CRUD operations, handling error cases: the repetitive work that used to drain hours is now minutes. The key is being specific about *your* patterns and conventions. I find that the more you reinforce a pattern in the codebase, the fewer mistakes the agents make and the more likely they are to follow it. That being said, if you don't run things down early, the agents definitely will repeat an anti-pattern. Early in my [Ignixa prototype](https://github.com/brendankowitz/ignixa-fhir), I felt like I was continuously telling Claude not to `.ToList()` my `AsyncEnumerables`, which would completely void the point of having them.
 
-**Documentation and explanation** — Generating clear docs from code, explaining complex logic for PRs, translating technical concepts for stakeholders. AI handles this better than most humans are willing to.
+**Documentation that actually happens.** Generating clear docs from code, explaining complex logic for PRs, translating technical concepts for stakeholders. AI handles this better than most humans are willing to (with a grain of salt). The docs Claude wrote for me ([ignixa-fhir](https://brendankowitz.github.io/ignixa-fhir/)) contained frequent errors, requiring a manual review of everything. The fast iterations, though, meant I could keep flagging the mistakes as I saw them and Claude spun away in the background fixing them just as fast. After the initial generation, keeping docs up-to-date with a specialized sub-agent seems like a pattern I want to adopt on all projects.
 
-**Refactoring with confidence** — Asking an AI to modernize a codebase while preserving behavior, then reviewing the changes. It's not perfect, but it's a powerful starting point.
+**Refactoring and modernizing.** Dependabot and Renovate are life-changing for keeping dependencies up-to-date, but I feel like we're getting close to the point where breaking API changes will be taken care of too. Even beyond this, for refactoring an interface or other repetitive tasks, using AI to spawn many sub-agents to trawl across the codebase and just get it done is a productivity multiplier for sure.
 
 ## What Still Requires Human Judgment
 
-AI isn't replacing software engineers—it's amplifying them. But the amplification only works if you know what to amplify:
+AI isn't replacing software engineers (this year); it's amplifying them. But the amplification only works if you know what to amplify:
 
-**Architecture decisions** — AI can suggest patterns, but deciding which tradeoffs matter for *your* system, *your* team, and *your* timeline requires human context it doesn't have.
+**Architecture decisions:** AI can suggest patterns, but deciding which tradeoffs matter for *your* system, *your* team, and *your* timeline requires human context it doesn't have. A great strategy here is to ask for multiple designs and plans that you can review; sometimes it helps get to a solution you wouldn't have thought of.
 
-**Security thinking** — AI will happily write insecure code if you don't prompt it otherwise. The adversarial mindset, threat modeling, and "what could go wrong here?" thinking remains firmly human territory.
-
-**Domain expertise** — In healthcare interoperability, for example, knowing that a particular FHIR profile has quirks, or that a regulation is about to change, or that a vendor has a reputation for breaking changes—this institutional knowledge is irreplaceable.
-
-**Team dynamics and code ownership** — Knowing when to refactor vs. when to leave something alone because the team that owns it has context you don't. AI can't navigate organizational complexity.
+**Code reviews:** Definitely some AI agents are doing a better job than others (I think Claude and Gemini do a good job of giving meaningful feedback), but reviewing AI code (and humans reviewing AI feedback) is still needed. Often I find myself asking (and I ended up building this into a slash command): "Review feedback and research for false positives, provide actionable next steps."
 
 ## The Meta Skill
 
-The engineers who thrive in this environment share a common trait: they're excellent at articulating intent. They can describe what they want, specify constraints clearly, and recognize when output doesn't match expectations.
+The engineers who thrive in this environment share a common trait: they're excellent at articulating intent, writing good specs, and defining requirements. They can describe what they want, specify constraints clearly, and recognize when output doesn't match expectations.
 
-This isn't prompt engineering tricks—it's clear thinking. The ability to decompose problems, specify behavior precisely, and communicate technical decisions clearly has always been valuable. AI just makes it essential.
+This isn't a prompt engineering trick; it's clear thinking. The ability to decompose problems, specify behavior precisely, and communicate technical decisions clearly has always been valuable. AI just makes it essential.
 
 As [Addy Osmani's LLM coding workflow](https://addyo.substack.com/p/my-llm-coding-workflow-going-into) illustrates, the developers getting the most out of AI tools have developed deliberate processes for how they interact with them.
 
+This aligns with [Boris Cherny's recent take](https://x.com/bcherny/status/2004887829252317325): to get the massive productivity boosts AI promises, you actually need *more* fundamental knowledge, not less. Understanding compilers, runtimes, and system design is what allows you to verify the AI's output rather than just hoping it works.
+
+### The "everything" agents
+
+I've found myself looking to agents to solve problems unrelated to simply coding, as these agents are simply good at performing "tasks." We can use them in similar ways to help track and develop habits and organize information even in our personal lives: an example is the [accountability buddy](https://dev.to/yooi/beyond-coding-your-accountability-buddy-with-claude-code-skill-4omh) rather than just a code generator.
+
 ---
 
-The tools will keep evolving. What won't change is the need for engineers who understand systems deeply, think critically about tradeoffs, and can translate between human needs and technical implementation. AI handles more of the typing. We need to be better at the thinking.
+The tools will keep evolving. What won't change is the need for engineers who understand systems deeply, think critically about tradeoffs, and can translate between human needs and technical implementation. AI handles more of the typing. **We need to be better at the thinking.**
 
-Before we see fundamental and mature directions emerge, 2026 will be a year of experimentation—finding what works, discarding what doesn't, and building the workflows that will define how we develop software for the next decade.
+Before we see fundamental and mature directions emerge, 2026 will be a year of experimentation: finding what works, discarding what doesn't, and building the workflows that will define how we develop software. 
 
-*What's your experience been? I'd love to hear how AI has changed your workflow—or where it's fallen short.*
+*What's your experience been? I'd love to hear how AI has changed your workflow, or where it's fallen short.*
 
 ---
 

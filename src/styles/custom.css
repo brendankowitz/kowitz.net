@@ -1,153 +1,190 @@
-/* Custom styles for kowitz.net */
+/* Custom styles for kowitz.net - Shiny "Cosmic Data" Theme */
 
-/* Modern 2025/2026 design aesthetic */
 :root {
-  /* Custom color palette - clean and professional */
+  /* Default (Light Mode) - Clean & Crisp */
   --sl-color-accent-low: #e0f2fe;
-  --sl-color-accent: #0284c7;
-  --sl-color-accent-high: #075985;
-  
-  /* Typography adjustments */
-  --sl-font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --sl-font-mono: 'Cascadia Code', 'Fira Code', Consolas, 'Liberation Mono', monospace;
-  
-  /* Spacing */
-  --sl-content-width: 45rem;
+  --sl-color-accent: #0ea5e9;
+  --sl-color-accent-high: #0284c7;
+  --sl-color-bg: #f8fafc;
 }
 
-/* Dark mode color adjustments */
+/* Dark Mode - The "Shiny" Experience */
 :root[data-theme='dark'] {
-  --sl-color-accent-low: #0c4a6e;
-  --sl-color-accent: #38bdf8;
-  --sl-color-accent-high: #bae6fd;
+  /* Brand Colors: Electric Cyan & Vivid Violet */
+  --sl-color-accent-low: #1e1b4b; /* Deep Indigo shadow */
+  --sl-color-accent: #38bdf8;     /* Sky 400 - Main Glow */
+  --sl-color-accent-high: #bae6fd; /* Light glow */
+  
+  /* Backgrounds: Deep Slate/Black for contrast */
+  --sl-color-bg: #020617;        /* Slate 950 */
+  --sl-color-bg-nav: rgba(2, 6, 23, 0.8); /* Semi-transparent */
+  --sl-color-bg-sidebar: rgba(2, 6, 23, 0.8);
+  
+  /* Borders */
+  --sl-color-hairline: rgba(56, 189, 248, 0.2); /* Subtle Blue tint */
 }
 
-/* Hero section customization for splash page */
+/* Global Atmosphere (Dark Mode) */
+[data-theme='dark'] body {
+  background: 
+    radial-gradient(circle at 50% 0%, #1e1b4b 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 30%),
+    #020617; /* Fallback */
+  background-attachment: fixed;
+}
+
+/* Typography & Headers */
+.hero .tagline, 
+[data-theme='dark'] article h1 {
+  background: linear-gradient(to right bottom, #38bdf8, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.2));
+}
+
+article h1 {
+  font-size: var(--sl-text-5xl);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* Hero Section */
 .hero {
-  padding-block: 3rem;
+  padding-block: 4rem;
+  position: relative;
 }
 
-.hero .tagline {
-  font-size: var(--sl-text-xl);
-  line-height: 1.6;
-  max-width: 45ch;
-}
-
-/* Hero image sizing - floating style without boxy container */
+/* Hero Avatar - Floating & Glowing */
 .hero img.hero-avatar {
   max-width: 280px;
   height: auto;
+  border-radius: 50%;
+  /* Double glow effect */
+  box-shadow: 
+    0 0 30px -5px rgba(56, 189, 248, 0.3),
+    inset 0 0 20px rgba(56, 189, 248, 0.2);
+  border: 2px solid rgba(56, 189, 248, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: float 6s ease-in-out infinite;
 }
 
-/* Card grid improvements */
+.hero img.hero-avatar:hover {
+  transform: scale(1.03) rotate(-2deg);
+  box-shadow: 0 0 50px -5px rgba(192, 132, 252, 0.5); /* Purple shift on hover */
+  border-color: rgba(192, 132, 252, 0.3);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Action Buttons - Shiny & Glassy */
+.action.primary {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1) !important;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+  color: white !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.action.primary:hover {
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.6);
+  transform: translateY(-2px);
+}
+
+.action.minimal {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--sl-color-white) !important;
+  transition: all 0.3s ease;
+}
+
+.action.minimal:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: var(--sl-color-accent) !important;
+}
+
+/* Card Grid - Glassmorphism */
 .sl-card-grid {
   gap: 1.5rem;
 }
 
 .sl-card {
-  border-radius: 0.75rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: rgba(30, 41, 59, 0.3); /* Transparent dark blue */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sl-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .sl-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  background: rgba(30, 41, 59, 0.6);
+  box-shadow: 
+    0 20px 40px -5px rgba(0, 0, 0, 0.3), 
+    0 0 20px -5px rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.3);
 }
 
-/* Reading time badge */
-.reading-time {
-  display: inline-block;
-  font-size: var(--sl-text-sm);
-  color: var(--sl-color-gray-3);
-  margin-bottom: 0.5rem;
+.sl-card:hover::before {
+  opacity: 1;
 }
 
-/* Blog post styling */
-article {
-  line-height: 1.75;
+.sl-card .title {
+  font-weight: 700;
+  color: var(--sl-color-white);
 }
 
-article h1 {
-  font-size: var(--sl-text-4xl);
-  letter-spacing: -0.02em;
+.sl-card .icon {
+  color: var(--sl-color-accent);
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
 }
 
-article h2 {
-  font-size: var(--sl-text-2xl);
-  margin-top: 2.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--sl-color-gray-5);
+/* Navbar Blur */
+header.header {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-article h3 {
-  font-size: var(--sl-text-xl);
-  margin-top: 2rem;
+/* Content Width & Spacing */
+:root {
+  --sl-content-width: 50rem;
 }
 
-/* Code block improvements */
-pre {
-  border-radius: 0.5rem;
-  font-size: 0.9em;
+/* Scrollbar Polish */
+::-webkit-scrollbar {
+  width: 10px;
 }
-
-code {
-  font-family: var(--sl-font-mono);
-  font-size: 0.9em;
+::-webkit-scrollbar-track {
+  background: #020617;
 }
-
-/* Link styling */
-article a {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  transition: text-decoration-color 0.2s ease;
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 5px;
+  border: 2px solid #020617;
 }
-
-article a:hover {
-  text-decoration-thickness: 2px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 50rem) {
-  .hero .tagline {
-    font-size: var(--sl-text-lg);
-  }
-  
-  article h1 {
-    font-size: var(--sl-text-3xl);
-  }
-}
-
-/* Footer attribution */
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: var(--sl-text-sm);
-  color: var(--sl-color-gray-3);
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Focus styles for accessibility */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--sl-color-accent);
-  outline-offset: 2px;
-}
-
-/* Print styles */
-@media print {
-  .sidebar,
-  .right-sidebar,
-  header {
-    display: none;
-  }
-  
-  main {
-    max-width: 100%;
-    padding: 0;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }

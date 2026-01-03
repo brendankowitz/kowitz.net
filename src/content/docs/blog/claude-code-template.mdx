@@ -1,0 +1,67 @@
+---
+title: "Standardizing Agent Workflows"
+description: A feature-first template for building software with agentic workflows.
+date: 2026-01-02
+tags: [ai, claude, workflow, architecture]
+---
+
+import Comments from '../../../components/Comments.astro';
+
+<p class="reading-time">4 min read</p>
+
+Agents aren't just chat windows or type-ahead assistance; they now scour our codebase to complete complex features. With this, I've naturally been gravitating toward a more specification and requirements-driven workflow. As I touched on in my [2026 AI post](/blog/ai-software-engineering-2026), trying to "one-shot" complex features usually results in fragile code, lost context, and a lot of backtracking. But shifting to a documentation-first approach initially brought its own kind of chaos.
+
+When I first started asking agents to simply "investigate" or "spec" things out, I ended up with a sprawl of over 50 markdown files scattered across `/investigations`, `/specifications`, and `/docs`. Claude was helpful enough to create them, but without a strict structure, it picked random filenames and locations. It quickly became unwieldy to track what was a rough idea versus a decided architectural path.
+
+The **[Claude Code Template](https://github.com/brendankowitz/claude-code-template)** is the direct result of that chaos. It is the collection of agents and commands that have been refined through months of use. They represent the most useful minimal set of tools I've found to make agents more productive during feature development.
+
+## The Power of Patterns
+
+From my experience, AI agents are pretty good at following patterns if you give them the guardrails. By introducing slash commands like `/fn-feature` and `/fn-adr`, we give Claude specific tools to manage the process itself. Since Claude can call these commands, it creates a much smoother loop: the agent handles the file organization and lifecycle state, leaving me to focus on the high-level direction (as it should be).
+
+## Thinking Before Coding: Feature-First Workflow
+
+The core philosophy of this template is a "Feature-First" approach. Instead of jumping straight into `src/`, we follow a structured lifecycle:
+
+1.  **Exploration**: We use dedicated "investigation" documents to explore technical approaches. No more random files; everything lives in a structured feature folder.
+2.  **Decision Making**: Successful investigations are formalized into [Architecture Decision Records (ADRs)](https://learn.microsoft.com/en-us/azure/well-architected/architect-role/architecture-decision-record). This ensures that the *why* behind a change is always documented.
+3.  **Implementation**: ADRs are broken down into small, manageable tasks. This is where the actual coding happens, guided by the requirements we already defined.
+4.  **Finalization**: Every feature ends with a technical review and a documentation update.
+
+## Specialized Agents for Specialized Tasks
+
+One powerful aspect to take advantage of when using a framework like Claude Code is the use of specialized agents. Rather than asking a single general-purpose model to do everything, we use a team of agents, each optimized for a specific role:
+
+*   **@adr-analyzer**: Our architect. It parses ADRs and ensures the implementation matches the design.
+*   **@coding-agent**: The primary engineer for feature implementation.
+*   **@complex-coding-agent**: Powered by Claude 3 Opus, this agent handles high-complexity system design and refactoring.
+*   **@fast-coding-agent**: A lightweight agent (using Haiku) for quick fixes and test updates.
+*   **@well-architected-agent**: An auditor that reviews code against best practices like security, reliability, and performance (based on [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/)).
+
+### How I Use Them
+
+Initially, I tried the Claude Pro plan. It's affordable, and Claude is good. However, since I'm working on multiple projects, repos, branches, and prototypes simultaneously, it just didn't come close to covering the usage I needed. So, I added Claude Max to my personal development stack. While it's a little pricier than I'd prefer, what I'm really buying is my time. Projects like this blog simply wouldn't exist without it.
+
+So, how do I maximize development on the $100 plan?
+
+The secret is to use Opus sparingly. It's an incredibly smart model, but it's slow and hungry for tokens.
+I find my week goes something like this:
+
+*   **Weekly Reset**: For the first few days, I set my main context to Sonnet. I use this framework to guide tasks into either Sonnet or Opus models depending on complexity.
+*   **Token Management**: Towards the end of the week, if I'm starting to run low on tokens, I'll keep using Sonnet as the main context (since it has its own limit) and delegate smaller bug fixes and features to Haiku (via `@fast-coding-agent`). You'd be surprised how much you can crank out with Haiku within the limits.
+*   **Escalation**: If I get stuck on a more complex bug, I'll bring in Opus or Sonnet to see if the agent can solve it. Sometimes I'll need to intervene, debug manually, and provide context to help the agent find the fix.
+*   **Feedback Loops**: Feedback loops are critical. The better the feedback systems, the longer the agent can run autonomously and produce high-quality work. Asking it to write a failing test for a bug is nearly always my first step. After verification, you can pretty much walk away and let the agent do its thing. Beyond this, for APIs, E2E tests are pure gold too.
+
+## Get Started
+
+If you're looking to level up your AI development workflow and avoid the "markdown sprawl," give the template a spin. It's designed to be flexible enough for various projects while providing enough structure to keep your codebase clean and maintainable.
+
+For those looking for a similar approach that spans multiple agent frameworks, [GitHub Spec-Kit](https://github.com/github/spec-kit/blob/main/spec-driven.md) is a great, albeit slightly heavier, alternative to consider.
+
+Check out the template repo on GitHub: **[brendankowitz/claude-code-template](https://github.com/brendankowitz/claude-code-template)**
+
+---
+
+## Comments
+
+<Comments />

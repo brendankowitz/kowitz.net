@@ -1,0 +1,53 @@
+---
+title: "Standardizing AI Workflows with the Claude Code Template"
+description: A feature-first template for building software with agentic AI workflows.
+date: 2026-01-02
+tags: [ai, claude, workflow, architecture]
+---
+
+import Comments from '../../../components/Comments.astro';
+
+<img src="/images/bk-computer-circle.webp" alt="Claude Code Template" style="float: right; max-width: 200px; margin: 0 0 1.5rem 2rem;" />
+
+<p class="reading-time">4 min read</p>
+
+If you've been using AI to help you code lately, you've probably noticed a pattern: it's great at snippets, but things can get messy when you try to build an entire feature. Context drifts, architectural decisions get lost in chat history, and it's easy to end up with a "big ball of mud" if you aren't careful.
+
+That's why I built the **[Claude Code Template](https://github.com/brendankowitz/claude-code-template)**. It's not just a collection of prompts; it's a standardized, agentic workflow designed to bring professional software engineering rigour to AI-assisted development.
+
+## Thinking Before Coding: Feature-First Workflow
+
+The core philosophy of this template is a "Feature-First" approach. Instead of jumping straight into `src/`, we follow a structured lifecycle that mimics how high-performing engineering teams actually work:
+
+1.  **Exploration**: We use dedicated "investigation" documents to explore technical approaches before committing to a path.
+2.  **Decision Making**: Successful investigations are formalized into **Architecture Decision Records (ADRs)**. This ensures that the *why* behind a change is always documented.
+3.  **Implementation**: ADRs are broken down into small, manageable tasks. This is where the actual coding happens, guided by the requirements we already defined.
+4.  **Finalization**: Every feature ends with a technical review and a documentation update.
+
+## Specialized Agents for Specialized Tasks
+
+One of the most powerful aspects of this template is the use of specialized agents. Rather than asking a single general-purpose model to do everything, we use a team of agents, each optimized for a specific role:
+
+*   **@adr-analyzer**: Our architect. It parses ADRs and ensures the implementation matches the design.
+*   **@coding-agent**: The primary engineer for feature implementation.
+*   **@complex-coding-agent**: Powered by Claude 3 Opus, this agent handles high-complexity system design and refactoring.
+*   **@fast-coding-agent**: A lightweight agent (using Haiku) for quick fixes and test updates.
+*   **@well-architected-agent**: An auditor that reviews code against best practices like security, reliability, and performance.
+
+## Why Standardization Matters
+
+When working with AI, consistency is key. By using slash commands like `/fn-feature`, `/fn-investigation`, and `/fn-task`, we provide the AI with a predictable environment. It knows exactly where to find context, how to document its decisions, and how to hand off work between different agents.
+
+This workflow reduces the cognitive load on the human developer. You aren't just "chatting" with an AI; you are managing a sophisticated development process.
+
+## Get Started
+
+If you're looking to level up your AI development workflow, give the template a spin. It's designed to be flexible enough for various projects while providing enough structure to keep your codebase clean and maintainable.
+
+Check it out on GitHub: **[brendankowitz/claude-code-template](https://github.com/brendankowitz/claude-code-template)**
+
+---
+
+## Comments
+
+<Comments />
